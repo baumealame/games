@@ -1,0 +1,160 @@
+.wrapper-coloring {
+  width:100%;
+  padding-top:15px;
+  margin:0 auto;
+  position: relative;}
+        
+        
+#svg-container {
+    position: relative;
+    width:Calc(100% - 30px);
+    max-width:600px;
+    margin:0px auto;
+    display: block;}
+
+#svg-image {margin-bottom:300px;max-width:100%;max-height:750px;height:auto;}
+        
+   .btn_small {
+    border: 1px solid rgba(88, 76, 67, 0.5);
+    border-radius: 20px;
+    margin:5px 0px;
+    padding: 0px 10px;
+    font-size: 12px;
+    line-height: 28px;
+    display:inline-block;
+    position: relative;
+    background-color:#f3f2ea;
+    font-family: 'Ortankhangeultext', sans-serif;
+    color: #584c43;vertical-align: middle;
+    height:30px;
+    box-sizing:border-box;}
+
+.btn_small img{height:12px;vertical-align: middle;padding:0 2px 2px 0;}
+.btn_back img{transform: rotate(90deg);padding:2px 2px 0 0;}
+.btn_small:hover {background-color:rgba(255,255,255,0.5);}
+        
+      .control-panel {padding:10px 0;
+        background-color:rgba(243,242,234,0.7);
+        margin:0;
+        height:auto;
+        position:fixed;
+        bottom:0;left:0;right:0;
+        display:block;
+        z-index: 10;text-align:center;}
+
+    .wrapper_control{
+        margin:0 auto;
+        width:100%;
+        max-width:604px;}
+    .wrapper-btns {position: relative; justify-content: space-between;display: flex;}
+    .editor_btns {}
+
+    #color-palette{margin:0;text-align:center;display: block;position:relative;font-size:0;}
+
+    .wrap-palettel-left {width:400px;display:inline-block;position:relative;}
+    .wrap-palettel-right{width:200px;display:inline-block;position:relative;}
+
+       .color-swatch {float:left;
+        display:block;width:30px;height:30px;margin:5px;
+        border-radius:50%;
+        cursor: pointer;
+        border: 1px solid rgba(88, 76, 67, 0.3);
+        box-sizing:border-box;}
+        
+       .color-swatch:hover {
+            border: 1px solid rgba(88, 76, 67, 1);}    
+
+        
+      #color-picker {
+        position: relative;
+      }
+        
+      /* 컬러 피커 스타일 수정 */   
+        input[type="color"] {
+          /* 원하는 스타일 속성을 추가/수정 */
+          width:30px;height:30px;
+          margin:5px;
+          border-radius:20px;padding:0;
+          border: 1px solid rgba(88, 76, 67, 0.5);
+          cursor: pointer;
+          display: inline-block;vertical-align: middle;
+        }
+        
+        input[type="color"]:hover {border:1px solid rgba(88, 76, 67, 1)}
+
+
+
+        input[type="color"]::-webkit-color-swatch-wrapper {
+          padding: 0;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+          border: none;
+          border-radius: 20px
+        }
+
+        input[type="color"]::-moz-color-swatch {
+          border: none;
+          border-radius:20px;
+        }
+
+        input[type="color"]::-moz-focus-inner {
+          border: 0;
+        }
+
+        
+        input[type="color"]::before {
+            content: "＋";
+    color: RGBa(88, 76, 67, 0.7);
+    margin-left: 0px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 28px;
+    font-family: 'Ortankhangeultext';}      
+        
+  
+
+
+
+    
+
+      #reset-button {
+        position: relative;
+      }
+
+      #save-button {
+        position: relative;
+      }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 630px) {
+    .control-panel{left:2vw;right:2vw;}
+    .wrap-palettel-left {width:66.666%;}
+    .wrap-palettel-right{width:33.333%;}
+    .color-swatch {width:5.4vw;height:5.4vw;margin:0.5vw;}
+    input[type="color"] {width:5.4vw;height:5.4vw;margin:0.5vw;}
+    input[type="color"]::before {font-size: 5.4vw;line-height:calc(5.4vw - 1px);}   
+    .btn_small {height:5vw;margin:0.5vw 0px;padding: 0 2vw;font-size:11px;line-height:calc(5vw - 1px)}
+    .btn_small img{height:10px;}
+}
+
+
+@media screen and (max-width: 376px) {
+    .wrap-palettel-left {width:100%;}
+    .wrap-palettel-right{width:100%;}
+    .control-panel{left:3vw;right:3vw;}
+    .color-swatch {width:7.4vw;height:7.4vw;margin:1vw;}
+    input[type="color"] {width:7.4vw;height:7.4vw;margin:1vw;}
+    input[type="color"]::before {font-size:7.4vw;line-height:calc(7.4vw - 1px);}   
+    .btn_small {height:6.8vw;margin:1vw 0px;padding: 0 2vw;font-size:11px;line-height:calc(6.8vw - 1px)}
+    .btn_small img{height:10px;}
+}
