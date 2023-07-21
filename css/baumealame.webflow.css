@@ -1100,13 +1100,6 @@ blockquote {
   opacity: 0.3;
 }
 
-.footer {
-  text-align: center;
-  margin-top: 100px;
-  padding-top: 20px;
-  position: relative;
-}
-
 .footer-text {
   color: #bbb;
   letter-spacing: 1px;
@@ -5398,12 +5391,9 @@ blockquote {
 
 .wrap_footer_arcade {
   width: 100%;
-  max-width: 920px;
   align-self: stretch;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
   position: relative;
 }
 
@@ -5443,9 +5433,8 @@ blockquote {
   grid-column-gap: 10px;
   border-top: 1px solid #7c7067;
   justify-content: space-between;
-  padding-top: 15px;
-  padding-bottom: 15px;
   display: block;
+  padding-top: 10px;
 }
 
 .wrap_arcade_header {
@@ -6437,8 +6426,6 @@ blockquote {
   }
 
   .wrap_footer_arcade {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .wrapper_grid {
@@ -7370,10 +7357,6 @@ blockquote {
 
   .book_page {
     top: 45px;
-  }
-
-  .footer {
-    position: relative;
   }
 
   .title {
