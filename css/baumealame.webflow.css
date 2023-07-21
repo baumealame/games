@@ -6,7 +6,7 @@
   grid-auto-columns: 1fr;
   display: grid;
 }
-
+ 
 .w-checkbox {
   margin-bottom: 5px;
   padding-left: 20px;
