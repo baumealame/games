@@ -20,17 +20,11 @@ saveButton.addEventListener('click', () => {
     // 사용자 에이전트 확인
     const userAgent = navigator.userAgent.toLowerCase();
 
-    if (userAgent.indexOf('android') !== -1) {
-      // 안드로이드 기기에서 실행 중인 경우
-      if (typeof window.Android !== 'undefined' && typeof window.Android.saveImageToAlbum === 'function') {
-        // 모바일 사진 앨범에 저장
-        window.Android.saveImageToAlbum(dataURL);
-      }
-    } else if (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1) {
+    if (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1) {
       // 아이폰 또는 아이패드에서 실행 중인 경우
       // 이미지를 새 창으로 열기
       const newWindow = window.open();
-      newWindow.document.write('<img src="' + dataURL + '" alt="플로렌스나이팅게일" style="max-width: 100%; height: auto;" />');
+      newWindow.document.write('<img src="' + dataURL + '" alt="컬러링_제주잠녀항쟁" style="max-width: 100%; height: auto;" />');
     } else {
       // 데스크탑 또는 다른 모바일 기기에서 실행 중인 경우
       // JPG 형식으로 이미지 다운로드
