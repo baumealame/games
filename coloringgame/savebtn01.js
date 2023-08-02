@@ -22,21 +22,30 @@ saveButton.addEventListener('click', () => {
 
     if (userAgent.indexOf('android') !== -1) {
       // 안드로이드 기기에서 실행 중인 경우
-      if (typeof window.Android !== 'undefined' && typeof window.Android.saveImageToAlbum === 'function') {
-        // 모바일 사진 앨범에 저장
-        window.Android.saveImageToAlbum(dataURL);
+      if (typeof window.Android !== 'undefined' && typeof window.Android.requestStoragePermission === 'function') {
+        // 외부 저장소 접근 권한 요청
+        window.Android.requestStoragePermission((permissionGranted) => {
+          if (permissionGranted) {
+            // 모바일 사진 앨범에 저장
+            window.Android.saveImageToAlbum(dataURL);
+          } else {
+            alert('앨범에 접근 권한이 필요합니다.');
+          }
+        });
+      } else {
+        alert('앨범 저장 기능을 사용할 수 없습니다.');
       }
     } else if (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1) {
       // 아이폰 또는 아이패드에서 실행 중인 경우
       // 이미지를 새 창으로 열기
       const newWindow = window.open();
-      newWindow.document.write('<img src="' + dataURL + '" alt="제주잠녀항쟁" style="max-width: 100%; height: auto;" />');
+      newWindow.document.write('<img src="' + dataURL + '" alt="컬러링_제주잠녀항쟁" style="max-width: 100%; height: auto;" />');
     } else {
       // 데스크탑 또는 다른 모바일 기기에서 실행 중인 경우
       // JPG 형식으로 이미지 다운로드
       const downloadLink = document.createElement('a');
       downloadLink.href = dataURL;
-      downloadLink.download = '제주잠녀항쟁.jpg';
+      downloadLink.download = '컬러링_제주잠녀항쟁.jpg';
       downloadLink.click();
     }
   };
