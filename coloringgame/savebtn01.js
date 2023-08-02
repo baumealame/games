@@ -20,22 +20,7 @@ saveButton.addEventListener('click', () => {
     // 사용자 에이전트 확인
     const userAgent = navigator.userAgent.toLowerCase();
 
-    if (userAgent.indexOf('android') !== -1) {
-      // 안드로이드 기기에서 실행 중인 경우
-      if (typeof window.Android !== 'undefined' && typeof window.Android.requestStoragePermission === 'function') {
-        // 외부 저장소 접근 권한 요청
-        window.Android.requestStoragePermission((permissionGranted) => {
-          if (permissionGranted) {
-            // 모바일 사진 앨범에 저장
-            window.Android.saveImageToAlbum(dataURL);
-          } else {
-            alert('앨범에 접근 권한이 필요합니다.');
-          }
-        });
-      } else {
-        alert('앨범 저장 기능을 사용할 수 없습니다.');
-      }
-    } else if (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1) {
+    if (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1) {
       // 아이폰 또는 아이패드에서 실행 중인 경우
       // 이미지를 새 창으로 열기
       const newWindow = window.open();
