@@ -66,7 +66,6 @@ function OpenAndDownload(canvas) {
   result_capture_wrapper.style.position = "fixed";
   result_capture_wrapper.style.top = "0";
   result_capture_wrapper.style.left = "0";
-  result_capture_wrapper.style.padding = "20px";
   result_capture_wrapper.style.width = "100%";
   result_capture_wrapper.style.height = "100%";
   result_capture_wrapper.style.backgroundColor = "#f3f2ea";
