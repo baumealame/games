@@ -47,7 +47,7 @@
   box-sizing: border-box;
 }
 
-#ios-image-layer {
+#result-image-layer {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -60,7 +60,7 @@
   z-index: 1000;
 }
 
-#ios-image-layer > img {
+#result-image-layer > img {
   border-radius: 10px;
   border: solid 10px #f3f2ea;
   box-sizing: border-box;
