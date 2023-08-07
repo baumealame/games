@@ -49,7 +49,6 @@
   background-size: 100%;
 }
 .list_thumbnail:hover {
-  background-size: 108%;
   transition-duration: 0.4s;
   transition-timing-function: ease-out;
 }
@@ -71,31 +70,59 @@
 }
 
 .list01 {
-  background-image: url(img/thm_01.png);
+  background-image: url(img/01-color.png);
 }
 .list02 {
-  background-image: url(img/thm_02.png);
+  background-image: url(img/02-color.png);
 }
 .list03 {
-  background-image: url(img/thm_03.png);
+  background-image: url(img/03-color.png);
 }
 .list04 {
-  background-image: url(img/thm_04.png);
+  background-image: url(img/04-color.png);
 }
 .list05 {
-  background-image: url(img/thm_05.png);
+  background-image: url(img/05-color.png);
 }
 .list06 {
-  background-image: url(img/thm_06.png);
+  background-image: url(img/06-color.png);
 }
 .list07 {
-  background-image: url(img/thm_07.png);
+  background-image: url(img/07-color.png);
 }
 .list08 {
-  background-image: url(img/thm_08.png);
+  background-image: url(img/08-color.png);
 }
 .list09 {
-  background-image: url(img/thm_09.png);
+  background-image: url(img/09-color.png);
+}
+
+.list01:hover {
+  background-image: url(img/01-mono.png);
+}
+.list02:hover {
+  background-image: url(img/02-mono.png);
+}
+.list03:hover {
+  background-image: url(img/03-mono.png);
+}
+.list04:hover {
+  background-image: url(img/04-mono.png);
+}
+.list05:hover {
+  background-image: url(img/05-mono.png);
+}
+.list06:hover {
+  background-image: url(img/06-mono.png);
+}
+.list07:hover {
+  background-image: url(img/07-mono.png);
+}
+.list08:hover {
+  background-image: url(img/08-mono.png);
+}
+.list09:hover {
+  background-image: url(img/09-mono.png);
 }
 
 a {
