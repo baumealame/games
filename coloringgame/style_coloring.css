@@ -50,24 +50,22 @@
 #ios-image-layer {
   width: 100vw;
   height: 100vh;
-  height: var(--100vh);
   position: fixed;
   top: 0;
   left: 0;
   display: none;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background-color: rgba(88, 76, 67, 0.3);
-  z-index: 10000;
+  background-color: rgba(88, 76, 67, 0.1);
+  z-index: 1000;
 }
 
 #ios-image-layer > img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 90%;
-  transform: translate(-50%, -50%);
-  border-radius: 5px;
+  border-radius: 10px;
+  border: solid 10px #f3f2ea;
+  box-sizing: border-box;
+  max-height: 70% !important;
+  /*box-shadow: 0px 0px 20px #f3f2ea;*/
 }
 
 .btn_small img {

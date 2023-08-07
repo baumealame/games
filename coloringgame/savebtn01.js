@@ -5,13 +5,13 @@ function Initiate() {
 
   OnResize();
   window.addEventListener("resize", OnResize);
-
-  document
-    .getElementById("ios-image-layer")
-    .addEventListener("click", function () {
-      $(this).fadeOut(200);
-    });
 }
+
+document
+  .getElementById("ios-image-layer")
+  .addEventListener("click", function () {
+    $(this).fadeOut(200);
+  });
 
 //-------result functions--------//
 const saveButton = document.getElementById("save-button");
@@ -56,9 +56,11 @@ function OpenAndDownload(canvas) {
   result_capture.style.position = "absolute";
   result_capture.style.top = "50%";
   result_capture.style.left = "50%";
-  result_capture.style.maxHeight = "94%";
-  result_capture.style.maxWidth = "94%";
+  result_capture.style.maxHeight = "90%";
+  result_capture.style.maxWidth = "90%";
   result_capture.style.transform = "translate(-50%, -50%)";
+  result_capture.alt = "멋진 여자 색칠공부";
+  result_capture.title = "멋진 여자 색칠공부";
 
   let result_capture_wrapper = document.createElement("div");
   result_capture_wrapper.style.display = "flex";
@@ -76,6 +78,8 @@ function OpenAndDownload(canvas) {
     w.focus();
     w.document.write(result_capture_wrapper.outerHTML);
     w.document.title = "멋진 여자 색칠공부";
+    document.getElementById("ios-image-layer").appendChild(result_capture);
+    $(document.getElementById("ios-image-layer")).fadeIn(200);
   } else {
     console.log("for some reason window not defined. open on a new layer");
   }
