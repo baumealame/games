@@ -1,39 +1,110 @@
-saveButton.addEventListener('click', () => {
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
+window.addEventListener("load", Initiate);
+
+function Initiate() {
+  $("#preloader").delay(300).fadeOut(300);
+
+  OnResize();
+  window.addEventListener("resize", OnResize);
+
+  document
+    .getElementById("ios-image-layer")
+    .addEventListener("click", function () {
+      $(this).fadeOut(200);
+    });
+}
+
+//-------result functions--------//
+const saveButton = document.getElementById("save-button");
+
+document.getElementById("save-button").addEventListener("click", SaveResultImg);
+
+function SaveResultImg() {
+  console.log("save result image");
+  RenderResult(document.getElementById("svg-image"));
+}
+
+function RenderResult(_result) {
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+  const svgImage = document.getElementById("svg-image");
   const svgData = new XMLSerializer().serializeToString(svgImage);
   const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
   context.putImageData(imageData, 0, 0);
 
   const image = new Image();
-  image.onload = () => {
+  image.onload = function () {
     // 원래 크기의 3배로 설정
     canvas.width = image.width * 3;
     canvas.height = image.height * 3;
-    // 안티앨리어싱이 적용
+    // 안티앨리어싱 적용
     context.imageSmoothingEnabled = true;
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-    // 이미지를 Base64 데이터 URL로 변환
-    const dataURL = canvas.toDataURL('image/jpeg', 1.0);
-
-    // 사용자 에이전트 확인
-    const userAgent = navigator.userAgent.toLowerCase();
-
-    if (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1) {
-      // 아이폰 또는 아이패드에서 실행 중인 경우
-      // 이미지를 새 창으로 열기
-      const newWindow = window.open();
-      newWindow.document.write('<img src="' + dataURL + '" alt="컬러링_제주잠녀항쟁" style="max-width: 100%; height: auto;" />');
-    } else {
-      // 데스크탑 또는 다른 모바일 기기에서 실행 중인 경우
-      // JPG 형식으로 이미지 다운로드
-      const downloadLink = document.createElement('a');
-      downloadLink.href = dataURL;
-      downloadLink.download = '컬러링_제주잠녀항쟁.jpg';
-      downloadLink.click();
-    }
+    OpenAndDownload(canvas);
   };
 
-  image.src = 'data:image/svg+xml;base64,' + btoa(svgData);
-});
+  image.src = "data:image/svg+xml;base64," + btoa(svgData);
+}
+
+function OpenAndDownload(canvas) {
+  console.log(canvas);
+  const result_capture_src = canvas.toDataURL("image/jpeg", 1.0);
+
+  let result_capture = new Image();
+  result_capture.src = result_capture_src;
+  result_capture.style.objectFit = "contain";
+  result_capture.style.position = "absolute";
+  result_capture.style.top = "50%";
+  result_capture.style.left = "50%";
+  result_capture.style.maxHeight = "94%";
+  result_capture.style.maxWidth = "94%";
+  result_capture.style.transform = "translate(-50%, -50%)";
+
+  let result_capture_wrapper = document.createElement("div");
+  result_capture_wrapper.style.display = "flex";
+  result_capture_wrapper.style.justifyContent = "center";
+  result_capture_wrapper.style.position = "fixed";
+  result_capture_wrapper.style.top = "0";
+  result_capture_wrapper.style.left = "0";
+  result_capture_wrapper.style.padding = "20px";
+  result_capture_wrapper.style.width = "100%";
+  result_capture_wrapper.style.height = "100%";
+  result_capture_wrapper.style.backgroundColor = "#f3f2ea";
+  result_capture_wrapper.appendChild(result_capture);
+
+  let w = window.open("");
+  if (w) {
+    w.focus();
+    w.document.write(result_capture_wrapper.outerHTML);
+    w.document.title = "멋진 여자 색칠공부";
+  } else {
+    console.log("for some reason window not defined. open on a new layer");
+  }
+
+  if (!IOS()) {
+    console.log("not ios. download image");
+    let downloader = document.createElement("a");
+    downloader.href = result_capture_src;
+    downloader.download = "멋진 여자 색칠공부";
+    downloader.click();
+  } else {
+    console.log("IOS. open on a new layer");
+    document.getElementById("ios-image-layer").appendChild(result_capture);
+    $(document.getElementById("ios-image-layer")).fadeIn(200);
+  }
+}
+
+function IOS() {
+  return (
+    [
+      "iPad Simulator",
+      "iPhone Simulator",
+      "iPod Simulator",
+      "iPad",
+      "iPhone",
+      "iPod",
+    ].includes(navigator.platform) ||
+    // iPad on iOS 13 detection
+    (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  );
+}
