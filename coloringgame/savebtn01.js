@@ -86,6 +86,8 @@ function OpenAndDownload(canvas) {
 
   if (!IOS()) {
     console.log("not ios. download image");
+    document.getElementById("ios-image-layer").appendChild(result_capture);
+    $(document.getElementById("ios-image-layer")).fadeIn(200);
     let downloader = document.createElement("a");
     downloader.href = result_capture_src;
     downloader.download = "멋진 여자 색칠공부";
