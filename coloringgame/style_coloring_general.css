@@ -17,7 +17,7 @@
 
 .wrap_coloing_list {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 20px auto;
   display: block;
   position: relative;
   top: 0;
@@ -135,11 +135,12 @@ a {
     padding: 0 2vw;
   }
   .list-container {
-    margin: 20px 1vw;
+    margin: 0 1.5vw 20px 1.5vw;
     width: 43vw;
   }
   .list_thumbnail {
     width: 43vw;
     height: 43vw;
+    border-radius: 15px;
   }
 }
