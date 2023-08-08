@@ -6,7 +6,7 @@
   grid-auto-columns: 1fr;
   display: grid;
 }
- 
+
 .w-checkbox {
   margin-bottom: 5px;
   padding-left: 20px;
@@ -4502,7 +4502,6 @@ blockquote {
 
 .goods_thm.curation,
 .goods_thm.by-tag {
-  min-height: 128px;
   clear: left;
   position: absolute;
   top: auto;
@@ -7124,12 +7123,10 @@ blockquote {
   }
 
   .goods_thm {
-    min-height: 170px;
   }
 
   .goods_thm.curation,
   .goods_thm.by-tag {
-    min-height: 120px;
   }
 
   .div_goodsprice {
@@ -7986,7 +7983,6 @@ blockquote {
   }
 
   .goods_thm {
-    min-height: 100px;
     flex: 1;
     align-self: stretch;
   }
