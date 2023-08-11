@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>봄알람 | 여성 위인 기억력 게임</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel|Lobster"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style_memorygame.css" />
+    <link rel="stylesheet" href="./arcade_general.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="wrapper_body">
+      <div class="wrapper_game">
+        <div class="heading">
+          여성 위인 기억력 게임
+          <p class="eng-title">Great Figures Memory Game</p>
+
+          <div class="level-label hide" id="level-game8">Easy</div>
+          <div class="level-label hide" id="level-game12">Middle</div>
+          <div class="level-label hide" id="level-game20">Hard</div>
+
+          <div class="timer">
+            <div class="stopwatch">
+              <p class="colon">:</p>
+              <label id="minutes"></label><label id="seconds"></label>
+            </div>
+            <div class="time">
+              <span class="label-besttime">최고 기록</span>
+              <span class="besttime" id="bestTime"></span>
+            </div>
+          </div>
+
+          <button
+            class="btn-refresh hide"
+            id="btn-refresh"
+            onClick="window.location.reload();"
+          >
+            다시하기
+          </button>
+        </div>
+        <div class="section_intro">
+          <div class="wrapper_tutorial">
+            <p>
+              섞여 있는 카드를 2장씩 뒤집어 같은 카드를 맞추세요.<br />
+              모든 짝을 맞추면 게임 끝!<br />
+              난이도를 선택하면 게임이 시작됩니다!
+            </p>
+          </div>
+          <div class="wrapper_levelbtn">
+            <div class="btn-group level_easy">
+              <button class="btn" id="btn-start-game8">
+                쉬움<span>Easy</span>
+              </button>
+            </div>
+            <div class="btn-group level_middle">
+              <button class="btn" id="btn-start-game12">
+                보통<span>Middle</span>
+              </button>
+            </div>
+            <div class="btn-group level_hard">
+              <button class="btn" id="btn-start-game20">
+                어려움<span>Hard</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="wrapper_introduction">
+            <div class="wrapper_figures">
+              <p>카드 속 위인들은 누구이며, 누가 그렸을까요?</p>
+              <div class="grid_figures">
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/04.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_headline">망치를 든 여인</div>
+                    <div class="figure_name">플로렌스 나이팅게일</div>
+
+                    <div class="figure_detail">간호사·작가·통계학자</div>
+                    <div class="figure_illust">그림 이은주</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/13.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">에멀린 팽크허스트</div>
+                    <div class="figure_headline">“여성에게 투표권을”</div>
+                    <div class="figure_detail">사회운동가</div>
+                    <div class="figure_illust">그림 요이한</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/16.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">차미리사</div>
+                    <div class="figure_headline">
+                      “여자들이여, 스스로의 생각으로 살아라”
+                    </div>
+                    <div class="figure_detail">
+                      교육자·독립운동가·여성운동가
+                    </div>
+                    <div class="figure_illust">그림 최진영</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/20.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">헬렌 켈러</div>
+                    <div class="figure_headline">
+                      장애를 넘어 위대한 사회활동가로
+                    </div>
+                    <div class="figure_detail">인권운동가·사회운동가·작가</div>
+                    <div class="figure_illust">그림 실키</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/03.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">김점동</div>
+                    <div class="figure_headline">
+                      대한민국 최초로 의학사를 취득하다
+                    </div>
+                    <div class="figure_detail">의사</div>
+                    <div class="figure_illust">그림 홍세인</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/02.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">김명순</div>
+                    <div class="figure_headline">
+                      “조선아 나를 더 학대해보아라”
+                    </div>
+                    <div class="figure_detail">소설가·시인</div>
+                    <div class="figure_illust">그림 권아라</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/10.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">버지니아 울프</div>
+                    <div class="figure_headline">
+                      “생각하는 일이 나의 싸움이다”
+                    </div>
+                    <div class="figure_detail">작가</div>
+                    <div class="figure_illust">그림 도도</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/01.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">권기옥</div>
+                    <div class="figure_headline">
+                      독립운동의 뜻을 안고 하늘을 날다
+                    </div>
+                    <div class="figure_detail">비행사·출판인·독립운동가</div>
+                    <div class="figure_illust">그림 김승연</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/05.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">나혜석</div>
+                    <div class="figure_headline">
+                      여자도 사람임을 온몸으로 외친 삶
+                    </div>
+                    <div class="figure_detail">화가·소설가</div>
+                    <div class="figure_illust">그림 김혜림</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/12.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">부춘화</div>
+                    <div class="figure_headline">
+                      빗창을 들고 제주해녀항쟁을 이끌다
+                    </div>
+                    <div class="figure_detail">해녀·독립운동가</div>
+                    <div class="figure_illust">그림 김희애</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/06.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">로자 파크스</div>
+                    <div class="figure_headline">
+                      “옳은 일을 하고 있다면 두려워하지 말라”
+                    </div>
+                    <div class="figure_detail">인권운동가</div>
+                    <div class="figure_illust">그림 엄주</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/19.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">허정숙</div>
+                    <div class="figure_headline">
+                      여성 해방과 자유연애를 외친 100년 전의 목소리
+                    </div>
+                    <div class="figure_detail">여성운동가·언론인</div>
+                    <div class="figure_illust">그림 최지수</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/14.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">이태영</div>
+                    <div class="figure_headline">
+                      호주제 폐지를 이끈 최초의 여성 변호사
+                    </div>
+                    <div class="figure_detail">변호사·여성운동가</div>
+                    <div class="figure_illust">그림 안혜원</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/17.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">캐서린 존슨</div>
+                    <div class="figure_headline">
+                      차별을 뚫고 NASA의 위인으로 우뚝 서다
+                    </div>
+                    <div class="figure_detail">물리학자·수학자</div>
+                    <div class="figure_illust">그림 애슝</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/18.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">투유유</div>
+                    <div class="figure_headline">
+                      극단적으로 열악한 환경에서 성취한 위대한 발견
+                    </div>
+                    <div class="figure_detail">중의학자·화학자</div>
+                    <div class="figure_illust">그림 이빈소연</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/09.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">박남옥</div>
+                    <div class="figure_headline">
+                      “일단 옳다고 생각하면 앞만 보고 돌진했다”
+                    </div>
+                    <div class="figure_detail">영화감독</div>
+                    <div class="figure_illust">그림 권서영</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/15.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">제인 구달</div>
+                    <div class="figure_headline">
+                      꿈을 좇아 위대한 연구자로, 활동가로
+                    </div>
+                    <div class="figure_detail">동물행동학자·환경운동가</div>
+                    <div class="figure_illust">그림 윤예지</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/11.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">베르타 카세레스</div>
+                    <div class="figure_headline">전 세계가 슬퍼한 죽음</div>
+                    <div class="figure_detail">환경운동가</div>
+                    <div class="figure_illust">그림 손은경</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/07.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">마리암 미르자하니</div>
+                    <div class="figure_headline">
+                      여자아이들이 스스로 재능이 있다고 느낄 수 있기를
+                    </div>
+                    <div class="figure_detail">수학자</div>
+                    <div class="figure_illust">그림 황희진</div>
+                  </div>
+                </div>
+                <div class="group_figure">
+                  <div class="group_img">
+                    <img src="img/08.png" class="figure_img" />
+                  </div>
+                  <div class="group_figure_desc">
+                    <div class="figure_name">말랄라 유사프자이</div>
+                    <div class="figure_headline">
+                      “총과 칼로 우리의 배움을 막을 수는 없다”
+                    </div>
+                    <div class="figure_detail">교육활동가</div>
+                    <div class="figure_illust">그림 박윤수</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="wrapper_figures">
+              <p>인물들에 관한 자세한 이야기는 다음 책에서 볼 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="cards-container-game8">
+          <div class="flip-container hide" id="card-template-game8">
+            <div class="flipper">
+              <div class="front"></div>
+              <div class="back">
+                <div class="label">
+                  <p class="name"></p>
+                  <p class="desc"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="cards-container-game12">
+          <div class="flip-container hide" id="card-template-game12">
+            <div class="flipper">
+              <div class="front"></div>
+              <div class="back">
+                <div class="label">
+                  <p class="name"></p>
+                  <p class="desc"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="cards-container-game20">
+          <div class="flip-container hide" id="card-template-game20">
+            <div class="flipper">
+              <div class="front"></div>
+              <div class="back">
+                <div class="label">
+                  <p class="name"></p>
+                  <p class="desc"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="wrap_footer_btns">
+          <div id="textToCopy" class="link-to-copy">
+            http://www.baumealame.com/game/memorygame
+          </div>
+          <button class="footer_btn copy_button" id="copyButton">
+            공유하기
+          </button>
+          <a
+            class="footer_btn"
+            href="https://www.baumealame.com/games"
+            target="_blank"
+            target="_blank"
+            >뿅뿅 봄알람 오락실 가기</a
+          >
+        </div>
+
+        <div class="wrap_footer_credit">
+          <div class="footer_logo">
+            <a href="https://www.baumealame.com" target="_blank"
+              ><img src="img/logo.png" />
+              <p>봄알람</p></a
+            >
+          </div>
+          <div class="footer_txt">
+            봄알람(baume à l&#x27;âme) All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- partial -->
+    <script src="./script_memorygame.js"></script>
+    <script src="./copylink.js"></script>
+  </body>
+</html>
