@@ -463,7 +463,7 @@ $(function () {
     $(".wrapper_intro_top").addClass("hide");
     $(".wrapper_section").addClass("hide");
     $(".eng-title").addClass("hide");
-    $(".footer").addClass("hide");
+    $(".wrap_footer").addClass("hide");
   });
 });
 
@@ -932,7 +932,7 @@ $(function () {
     $(".wrapper_intro_top").addClass("hide");
     $(".wrapper_section").addClass("hide");
     $(".eng-title").addClass("hide");
-    $(".footer").addClass("hide");
+    $(".wrap_footer").addClass("hide");
   });
 });
 
@@ -1497,7 +1497,7 @@ $(function () {
     $(".wrapper_intro_top").addClass("hide");
     $(".wrapper_section").addClass("hide");
     $(".eng-title").addClass("hide");
-    $(".footer").addClass("hide");
+    $(".wrap_footer").addClass("hide");
   });
 });
 
