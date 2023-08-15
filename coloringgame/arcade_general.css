@@ -55,7 +55,7 @@ a {
   font-size: 30px;
   line-height: 35px;
   font-weight: 300;
-  border-bottom: 1px solid #584c43;
+  border-bottom: 1px solid #7c7067;
   z-index: 10;
   text-align: center;
 }
@@ -120,10 +120,14 @@ a {
 }
 
 /* 푸터 */
+.wrap_footer {
+  border-top: 1px solid #7c7067;
+  padding-top: 10px;
+}
 .footer {
   display: block;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   text-align: center;
   z-index: 10;

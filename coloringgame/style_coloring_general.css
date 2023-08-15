@@ -1,14 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
 .wrapper_game {
   position: relative;
   text-align: center;
   min-height: 600px;
   height: auto;
   display: block;
-  margin-bottom: 60px;
+  margin-bottom: 140px;
   margin-top: 100px;
 }
 
-.tutorial {
+.flex-block {
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  display: flex;
+}
+
+.game_list {
+  grid-column-gap: 20px;
+  grid-row-gap: 60px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+  display: grid;
+}
+
+.game_list > a {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+.wrapper_introduction {
   margin-top: 20px;
   font-size: 16px;
   text-align: center;
@@ -16,113 +46,78 @@
 }
 
 .wrap_coloing_list {
-  max-width: 900px;
+  width: 100%;
+  max-width: 1240px;
   margin: 20px auto;
   display: block;
   position: relative;
   top: 0;
   left: 0;
   right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
   height: auto;
 }
 
 .list-container {
-  margin: 20px 7.5px;
-  width: auto;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  grid-row-gap: 6px;
+  width: 100%;
   height: auto;
   position: relative;
-  display: inline-block;
   vertical-align: top;
 }
 
 .list_thumbnail {
   display: block;
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  height: auto;
   border: 1px solid #7c7067;
   border-radius: 20px;
   overflow: hidden;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
 }
-.list_thumbnail:hover {
-  transition-duration: 0.4s;
-  transition-timing-function: ease-out;
+
+.list_thumbnail .thm_default {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 2;
 }
 
-.list-container img {
-  display: block;
-  position: relative;
-  width: 100%;
+.list_thumbnail .thm_default:hover {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  opacity: 0;
 }
+
+.list_thumbnail .thm_hover {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 .list-container .name {
-  font-size: 16px;
-  line-height: 27px;
+  font-size: 20px;
+  line-height: 30px;
   margin: 0;
 }
 .list-container .desc {
+  color: #99897e;
   font-size: 13px;
   line-height: 20px;
   margin: 0;
-}
-
-.list01 {
-  background-image: url(img/01-color.png);
-}
-.list02 {
-  background-image: url(img/02-color.png);
-}
-.list03 {
-  background-image: url(img/03-color.png);
-}
-.list04 {
-  background-image: url(img/04-color.png);
-}
-.list05 {
-  background-image: url(img/05-color.png);
-}
-.list06 {
-  background-image: url(img/06-color.png);
-}
-.list07 {
-  background-image: url(img/07-color.png);
-}
-.list08 {
-  background-image: url(img/08-color.png);
-}
-.list09 {
-  background-image: url(img/09-color.png);
-}
-
-.list01:hover {
-  background-image: url(img/01-mono.png);
-}
-.list02:hover {
-  background-image: url(img/02-mono.png);
-}
-.list03:hover {
-  background-image: url(img/03-mono.png);
-}
-.list04:hover {
-  background-image: url(img/04-mono.png);
-}
-.list05:hover {
-  background-image: url(img/05-mono.png);
-}
-.list06:hover {
-  background-image: url(img/06-mono.png);
-}
-.list07:hover {
-  background-image: url(img/07-mono.png);
-}
-.list08:hover {
-  background-image: url(img/08-mono.png);
-}
-.list09:hover {
-  background-image: url(img/09-mono.png);
+  font-weight: 400;
 }
 
 a {
@@ -131,16 +126,29 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-  .wrapper_game {
-    padding: 0 2vw;
+  .game_list {
+    grid-template-columns: 1fr 1fr;
   }
-  .list-container {
-    margin: 0 1.5vw 20px 1.5vw;
-    width: 43vw;
-  }
+
   .list_thumbnail {
-    width: 43vw;
-    height: 43vw;
     border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .game_list {
+    grid-row-gap: 50px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .list-container .name {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .game_list {
+    grid-column-gap: 15px;
+    grid-row-gap: 40px;
   }
 }

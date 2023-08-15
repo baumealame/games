@@ -99,16 +99,3 @@ resetButton.addEventListener("click", () => {
     }
   }
 });
-
-/*        
-        // JPG 형식으로 이미지를 다운로드
-        const downloadLink = document.createElement('a');
-        downloadLink.href = canvas.toDataURL('image/jpeg', 1.0);
-        downloadLink.download = 'coloring.jpg';
-        downloadLink.click();
-            
-        // 모바일 사진 앨범에 저장
-        if (typeof window.Android !== 'undefined' && typeof window.Android.saveImageToAlbum === 'function') {
-          window.Android.saveImageToAlbum(downloadLink.href);
-        }
-*/
