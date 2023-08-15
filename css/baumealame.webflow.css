@@ -2167,8 +2167,9 @@ blockquote {
   color: #584c43;
 }
 
-.wrapper_arcade_list {
-  max-width: 920px;
+.wrapper_game_list {
+  width: 100%;
+  max-width: 1240px;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   margin: 150px auto 100px;
@@ -2177,7 +2178,7 @@ blockquote {
   position: relative;
 }
 
-.wrapper_arcade_list.filter_nav {
+.wrapper_game_list.filter_nav {
   padding-left: 0;
   padding-right: 0;
 }
@@ -4476,7 +4477,7 @@ blockquote {
   clear: left;
 }
 
-.goods_thm {
+.game_thm {
   z-index: 2;
   width: 100%;
   height: auto;
@@ -4485,23 +4486,23 @@ blockquote {
   position: relative;
 }
 
-.goods_thm:hover {
+.game_thm:hover {
   outline-offset: -3px;
   border-width: 1px;
   outline: 2px #7c7067;
 }
 
-.goods_thm.no_hover {
+.game_thm.no_hover {
   z-index: 1;
 }
 
-.goods_thm.no_hover:hover {
+.game_thm.no_hover:hover {
   outline-offset: -3px;
   outline: 2px #7c7067;
 }
 
-.goods_thm.curation,
-.goods_thm.by-tag {
+.game_thm.curation,
+.game_thm.by-tag {
   clear: left;
   position: absolute;
   top: auto;
@@ -4546,7 +4547,7 @@ blockquote {
   color: #584c43;
 }
 
-.goods_bg {
+.gamelist_bg {
   z-index: 1;
   border-radius: 28px;
   display: block;
@@ -4557,18 +4558,18 @@ blockquote {
   right: 0%;
 }
 
-.goods_bg.arcade {
+.gamelist_bg.arcade {
   background-color: #bbf5ff;
 }
 
-.wrap_goods_thm {
+.wrap_game_thm {
   border: 1px solid #7c7067;
   border-radius: 30px;
   position: relative;
   overflow: hidden;
 }
 
-.wrap_goods_thm.arcade {
+.wrap_game_thm.arcade {
   background-color: #acffb5;
 }
 
@@ -4626,17 +4627,17 @@ blockquote {
   right: 300px;
 }
 
-.goods_info {
+.group_game_info {
   z-index: 2;
   width: 100%;
-  grid-row-gap: 3px;
+  grid-row-gap: 6px;
   text-align: center;
   border-top-width: 1px;
   border-top-color: #584c43;
   border-bottom-width: 1px;
   border-bottom-color: #584c43;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
   position: relative;
   top: 0%;
@@ -4645,12 +4646,12 @@ blockquote {
   right: 0;
 }
 
-.goods_info:hover {
+.group_game_info:hover {
   color: #584c43;
 }
 
-.goods_info.curation,
-.goods_info.by-keyword {
+.group_game_info.curation,
+.group_game_info.by-keyword {
   grid-row-gap: 2px;
   margin-top: 8px;
 }
@@ -4752,7 +4753,7 @@ blockquote {
   right: 0;
 }
 
-.goods_info_price {
+.group_game_info_price {
   flex: none;
   margin-right: 1px;
   font-size: 16px;
@@ -4760,7 +4761,7 @@ blockquote {
   display: inline-block;
 }
 
-.goods_info_detail {
+.group_game_info_detail {
   font-size: 12px;
   line-height: 20px;
 }
@@ -5557,7 +5558,7 @@ blockquote {
   display: inline-block;
 }
 
-.arcade_list {
+.game_list {
   grid-column-gap: 20px;
   grid-row-gap: 40px;
   grid-template-rows: auto;
@@ -5568,13 +5569,13 @@ blockquote {
   display: grid;
 }
 
-.arcade_list.curation {
+.game_list.curation {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.arcade_list.by-keyword {
+.game_list.by-keyword {
   grid-column-gap: 10px;
   grid-row-gap: 20px;
   column-count: 4;
@@ -5588,30 +5589,29 @@ blockquote {
   position: relative;
 }
 
-.arcade_title {
+.game_title {
   z-index: 10;
   border-bottom: 1px #333;
   font-size: 20px;
-  line-height: 32px;
+  line-height: 30px;
   display: inline-block;
 }
 
-.arcade_title.center {
+.game_title.center {
   text-align: center;
   font-size: 24px;
   font-weight: 300;
   line-height: 38px;
 }
 
-.arcade_caption {
+.game_caption {
   color: #99897e;
-  margin-top: 4px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   position: relative;
 }
 
-.arcade_caption.hide {
+.game_caption.hide {
   display: none;
 }
 
@@ -5861,7 +5861,7 @@ blockquote {
     grid-template-columns: 1fr 1fr;
   }
 
-  .wrapper_arcade_list {
+  .wrapper_game_list {
     max-width: 100%;
     margin-top: 140px;
   }
@@ -6311,8 +6311,8 @@ blockquote {
     right: 200px;
   }
 
-  .goods_info.curation,
-  .goods_info.by-keyword {
+  .group_game_info.curation,
+  .group_game_info.by-keyword {
     margin-top: 5px;
   }
 
@@ -6469,17 +6469,17 @@ blockquote {
     line-height: 36px;
   }
 
-  .arcade_list {
+  .game_list {
     grid-template-columns: 1fr 1fr;
   }
 
-  .arcade_list.curation {
+  .game_list.curation {
     grid-column-gap: 10px;
     grid-row-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .arcade_list.by-keyword {
+  .game_list.by-keyword {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -6770,7 +6770,7 @@ blockquote {
     display: block;
   }
 
-  .wrapper_arcade_list {
+  .wrapper_game_list {
     margin-top: 30px;
   }
 
@@ -7122,11 +7122,11 @@ blockquote {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .goods_thm {
+  .game_thm {
   }
 
-  .goods_thm.curation,
-  .goods_thm.by-tag {
+  .game_thm.curation,
+  .game_thm.by-tag {
   }
 
   .div_goodsprice {
@@ -7173,7 +7173,7 @@ blockquote {
     right: 0;
   }
 
-  .goods_info {
+  .group_game_info {
     grid-row-gap: 2px;
     margin-top: 10px;
   }
@@ -7186,7 +7186,7 @@ blockquote {
     width: 28px;
   }
 
-  .goods_info_price {
+  .group_game_info_price {
     font-size: 16px;
     line-height: 24px;
     display: inline;
@@ -7295,27 +7295,27 @@ blockquote {
 
   .arcade_signage {
     margin-bottom: 40px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: block;
     top: 30px;
   }
 
-  .arcade_list.curation {
+  .game_list.curation {
     grid-column-gap: 15px;
     grid-row-gap: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .arcade_list.by-keyword {
+  .game_list.by-keyword {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .arcade_title {
+  .game_title {
     z-index: 10;
   }
 
-  .arcade_caption {
+  .game_caption {
     margin-top: 5px;
   }
 }
@@ -7553,13 +7553,13 @@ blockquote {
     position: relative;
   }
 
-  .wrapper_arcade_list {
+  .wrapper_game_list {
     margin-top: 70px;
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .wrapper_arcade_list.filter_nav {
+  .wrapper_game_list.filter_nav {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -7982,7 +7982,7 @@ blockquote {
     position: relative;
   }
 
-  .goods_thm {
+  .game_thm {
     flex: 1;
     align-self: stretch;
   }
@@ -8007,7 +8007,7 @@ blockquote {
     margin: -10px -15px;
   }
 
-  .goods_info {
+  .group_game_info {
     flex: 1;
     align-self: stretch;
   }
@@ -8021,7 +8021,7 @@ blockquote {
     display: none;
   }
 
-  .goods_info_price {
+  .group_game_info_price {
     font-size: 14px;
   }
 
@@ -8227,7 +8227,7 @@ blockquote {
     margin-bottom: 4px;
   }
 
-  .arcade_list {
+  .game_list {
     grid-column-gap: 20px;
     grid-row-gap: 40px;
     flex-direction: column;
@@ -8242,16 +8242,16 @@ blockquote {
     position: relative;
   }
 
-  .arcade_list.curation {
+  .game_list.curation {
     grid-row-gap: 30px;
     grid-template-columns: 1fr 1fr;
   }
 
-  .arcade_list.by-keyword {
+  .game_list.by-keyword {
     grid-template-columns: 1fr 1fr;
   }
 
-  .arcade_title {
+  .game_title {
     top: 56px;
   }
 }
