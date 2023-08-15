@@ -17898,14 +17898,12 @@ __p+='`),
                 Ae !== "network-only" &&
                 Ae !== "no-cache"
               ) {
-                var I = this.dataStore
-                    .getCache()
-                    .diff({
-                      query: ge,
-                      variables: x,
-                      returnPartialData: !0,
-                      optimistic: !1,
-                    }),
+                var I = this.dataStore.getCache().diff({
+                    query: ge,
+                    variables: x,
+                    returnPartialData: !0,
+                    optimistic: !1,
+                  }),
                   A = I.complete,
                   C = I.result;
                 (Fe = !A || Ae === "cache-and-network"), (Ge = C);
@@ -18031,13 +18029,11 @@ __p+='`),
                         else if (Ae && Ae.data && !Fe) (A = Ae.data), (C = !1);
                         else {
                           var S = w.getQuery(E).document,
-                            J = w.dataStore
-                              .getCache()
-                              .diff({
-                                query: S,
-                                variables: ee.previousVariables || ee.variables,
-                                optimistic: !0,
-                              });
+                            J = w.dataStore.getCache().diff({
+                              query: S,
+                              variables: ee.previousVariables || ee.variables,
+                              optimistic: !0,
+                            });
                           (A = J.result), (C = !J.complete);
                         }
                         var fe = void 0;
@@ -18334,14 +18330,12 @@ __p+='`),
                 x = this.getQuery(E.queryId).newData;
               if (x) return n.maybeDeepFreeze({ data: x.result, partial: !1 });
               try {
-                var V = this.dataStore
-                  .getCache()
-                  .read({
-                    query: G,
-                    variables: w,
-                    previousResult: ee ? ee.data : void 0,
-                    optimistic: T,
-                  });
+                var V = this.dataStore.getCache().read({
+                  query: G,
+                  variables: w,
+                  previousResult: ee ? ee.data : void 0,
+                  optimistic: T,
+                });
                 return n.maybeDeepFreeze({ data: V, partial: !1 });
               } catch {
                 return n.maybeDeepFreeze({ data: {}, partial: !0 });
@@ -50317,15 +50311,13 @@ Arguments: ` +
         }
         function he(oe, te, K) {
           if (
-            (te
-              .removeClass(y)
-              .css({
-                opacity: "",
-                transition: "",
-                transform: "",
-                width: "",
-                height: "",
-              }),
+            (te.removeClass(y).css({
+              opacity: "",
+              transition: "",
+              transform: "",
+              width: "",
+              height: "",
+            }),
             K.addClass(y).each(M.intro),
             ia.redraw.up(),
             !oe.intro)
@@ -64013,7 +64005,7 @@ Webflow.require("ix2").init({
     },
     "a-36": {
       id: "a-36",
-      title: "goods_thm_hover_on",
+      title: "game_thm_hover_on",
       actionItemGroups: [
         {
           actionItems: [
@@ -64026,7 +64018,7 @@ Webflow.require("ix2").init({
                 duration: 500,
                 target: {
                   useEventTarget: "CHILDREN",
-                  selector: ".goods_bg",
+                  selector: ".gamelist_bg",
                   selectorGuids: ["04ff6277-2554-ac38-9b20-83af1ddf7fbe"],
                 },
                 filters: [
@@ -64052,7 +64044,7 @@ Webflow.require("ix2").init({
                 duration: 500,
                 target: {
                   useEventTarget: "CHILDREN",
-                  selector: ".goods_bg",
+                  selector: ".gamelist_bg",
                   selectorGuids: ["04ff6277-2554-ac38-9b20-83af1ddf7fbe"],
                 },
                 filters: [
@@ -64073,7 +64065,7 @@ Webflow.require("ix2").init({
     },
     "a-37": {
       id: "a-37",
-      title: "goods_thm_hover_off",
+      title: "game_thm_hover_off",
       actionItemGroups: [
         {
           actionItems: [
@@ -64086,7 +64078,7 @@ Webflow.require("ix2").init({
                 duration: 0,
                 target: {
                   useEventTarget: "CHILDREN",
-                  selector: ".goods_bg",
+                  selector: ".gamelist_bg",
                   selectorGuids: ["04ff6277-2554-ac38-9b20-83af1ddf7fbe"],
                 },
                 filters: [
@@ -64112,7 +64104,7 @@ Webflow.require("ix2").init({
                 duration: 500,
                 target: {
                   useEventTarget: "CHILDREN",
-                  selector: ".goods_bg",
+                  selector: ".gamelist_bg",
                   selectorGuids: ["04ff6277-2554-ac38-9b20-83af1ddf7fbe"],
                 },
                 filters: [
@@ -64496,7 +64488,7 @@ Webflow.require("ix2").init({
     },
     "a-47": {
       id: "a-47",
-      title: "goods_thm_on",
+      title: "game_thm_on",
       actionItemGroups: [
         {
           actionItems: [
@@ -64544,7 +64536,7 @@ Webflow.require("ix2").init({
     },
     "a-48": {
       id: "a-48",
-      title: "goods_thm_off",
+      title: "game_thm_off",
       actionItemGroups: [
         {
           actionItems: [
