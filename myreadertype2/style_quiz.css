@@ -90,13 +90,19 @@ border-bottom:1px solid #584c43;z-index: 10;text-align: center;}
 }
 
 .slider-track {
+  will-change: transform;
   display: flex;
   width: max-content;
   position: absolute;
   top: 0;
   left: 0;
+    height: 100%;    
   animation: scrollLeft 25s linear infinite;
-  height: 100%;             
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+           
 }
 
 .slider-track img {
@@ -109,8 +115,14 @@ border-bottom:1px solid #584c43;z-index: 10;text-align: center;}
 }
 
 @keyframes scrollLeft {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0%   {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+  }
 }
 
 
