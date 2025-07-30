@@ -21,7 +21,7 @@ border-bottom:1px solid #584c43;z-index: 10;text-align: center;}
     text-align: center;}
 .wrapper_start_body {position: relative;
     text-align: center;
-    height: calc(var(--vh, 1vh) * 100 - 180px);
+    height: 100%;
     display: block;
     margin-bottom: 20px;
     z-index: 1;
@@ -37,7 +37,7 @@ border-bottom:1px solid #584c43;z-index: 10;text-align: center;}
     text-align:center;
     z-index: 10;
     width:100%;
-    padding-bottom:20px;}
+    padding-bottom:10px;}
 
 .quiz_desc {width: auto;
     margin: 20px;
@@ -78,6 +78,7 @@ span.check {display:inline-block;width:24px;height:24px;border:1px solid #584c43
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height:100vh;
     min-height: clac(var(--vh, 1vh) * 100);
 }
 
@@ -214,7 +215,7 @@ a {color:#584c43;text-decoration: none;}
     text-align: center;
     z-index: 10;
     width: calc(100% - 40px);
-    max-width: 500px;
+    max-width: 460px;
     padding-bottom: 10px;
     position: fixed;
     bottom: 0;
